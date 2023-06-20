@@ -45,7 +45,6 @@ const pizzaData = [
 ];
 
 function Header() {
-  // const styles = { color: "red", fontSize: "48px", textTransform: "uppercase" };
   const styles = {};
   return (
     <h1 styles={styles} className="header footer">
@@ -58,32 +57,27 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="pizzas/spinaci.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mushrooms, spinach, and ricotta cheese"
-        photoName="pizzas/funghi.jpg"
-        price={12}
-      />
+
+      <ul className="pizza">
+        {pizzaData.map((pizza) => (
+          <Pizza name={pizza.name} photoName={pizza.photoName} />
+        ))}
+      </ul>
     </main>
   );
 }
+
 function Pizza(props) {
   console.log(props);
   return (
-    <div className="pizza">
+    <li className="pizza">
       <img src={props.photoName} width="50%" alt={props.name} />
       <div>
         <h3>{props.name}</h3>
         <p>{props.ingredients}</p>
         <span>{props.price + 3}</span>
       </div>
-    </div>
+    </li>
   );
 }
 
