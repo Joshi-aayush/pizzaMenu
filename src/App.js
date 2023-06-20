@@ -58,7 +58,7 @@ function Header() {
   // const styles = { color: "red", fontSize: "48px", textTransform: "uppercase" };
   const styles = {};
   return (
-    <h1 styles={styles} className="header">
+    <h1 styles={styles} className="header footer">
       Fast React Pizza Co
     </h1>
   );
